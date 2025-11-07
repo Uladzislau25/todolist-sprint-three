@@ -50,7 +50,7 @@ test('correct task should be created at correct array', () => {
   expect(endState.todolistId1.length).toBe(3)
   expect(endState.todolistId2.length).toBe(4)
   expect(endState.todolistId2[0].id).toBeDefined()
-  expect(endState.todolistId2[0].title).toBe('juice')
+  expect(endState.todolistId2[3].title).toBe('juice')
   expect(endState.todolistId2[0].isDone).toBe(false)
 })
 
@@ -82,7 +82,7 @@ test('array should be created for new todolist', () => {
 })
 
 test('property with todolistId should be deleted', () => {
-  const endState = tasksReducer(startState, deleteTodolistAC('todolistId2'))
+  const endState = tasksReducer(startState, deleteTodolistAC({id: 'todolistId2'}))
 
   const keys = Object.keys(endState)
 

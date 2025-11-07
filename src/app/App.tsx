@@ -71,19 +71,19 @@ export const App = () => {
   }
 
   const createTodolist = (title: string) => {
-    dispatch(createTodolistAC(title))
+      dispatch(createTodolistAC(title))
   }
 
   const deleteTodolist = (todolistId: string) => {
-    dispatch(deleteTodolistAC(todolistId))
+    dispatch(deleteTodolistAC({id: todolistId}))
   }
 
   const changeTodolistTitle = (todolistId: string, title: string) => {
-    dispatch(changeTodolistTitleAC({id: todolistId, title}))
+    dispatch(changeTodolistTitleAC({id: todolistId, title: title}))
   }
 
   const deleteTask = (todolistId: string, taskId: string) => {
-    dispatch(deleteTaskAC({todolistId, taskId}))
+    dispatch(deleteTaskAC({ todolistId, taskId}))
   }
 
   const createTask = (todolistId: string, title: string) => {
